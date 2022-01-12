@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css" />
+    <script src="jquery.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-8">
+    <meta name="viewport" content="width=device-width">
+    <style>
+        .card-container {
+            background-color: #ffffff;
+
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        img {
+            width: 70%;
+            height: 250px;
+
+        }
+
+        .heading1 {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .heading2 {
+            font-size: 18px;
+        }
+
+        p {
+
+            font-weight: 600;
+        }
+
+        body {
+            background-color: rgb(173, 158, 158);
+        }
+
+        .header {
+            font-weight: 600;
+            color: #ffffff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="text-center header">Shopping Cart</h1>
+        <div class="row">
+
+            <div class="col-12 col-md-6 col-lg-3 text-center mb-3">
+                <div class="card-container shadow">
+                    <article>
+                        <figure>
+                            <img src="jeans.jpeg" alt="jeans" />
+                        </figure>
+                        <h1 class="heading1">Urbano Fashion</h1>
+                    </article>
+                    <div>
+                        <h1 class="heading2" id="jeans">Stretch Jeans</h1>
+                        <p id="jprice">$589</p>
+                        <button class="btn btn-success" id="button" onclick="addCart('button','jeans','jprice')">Add to
+                            Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-3 text-center mb-3">
+                <div class="card-container shadow">
+                    <article>
+                        <figure>
+                            <img src="tshirt.jpg" alt="tshirt" />
+                        </figure>
+                        <h1 class="heading1">LEOTUDE</h1>
+                    </article>
+                    <div>
+                        <h1 class="heading2" id="tshirt">Men's T-Shirt</h1>
+                        <p id="tprice">$689</p>
+                        <button class="btn btn-success" id="buttonone"
+                            onclick="addCart('buttonone','tshirt','tprice')">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-3 text-center mb-3">
+                <div class="card-container shadow">
+                    <article>
+                        <figure>
+                            <img src="belt.jpeg" alt="belt" />
+                        </figure>
+                        <h1 class="heading1">Labnoft</h1>
+                    </article>
+                    <div>
+                        <h1 class="heading2" id="belt">Leather Belt</h1>
+                        <p id="bprice">$699</p>
+                        <button class="btn btn-success" id="buttontwo"
+                            onclick="addCart('buttontwo','belt','bprice')">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-3 text-center mb-3">
+                <div class="card-container shadow">
+                    <article>
+                        <figure>
+                            <img src="glass.jpg" alt="glass" />
+                        </figure>
+                        <h1 class="heading1">Titan</h1>
+                    </article>
+                    <div>
+                        <h1 class="heading2" id="glasses">Spectacle Frame</h1>
+                        <p id="gprice">$1595</p>
+                        <button class="btn btn-success" id="buttonthree"
+                            onclick="addCart('buttonthree','glasses','gprice')">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-3 text-center mb-3">
+                <div class="card-container shadow">
+                    <article>
+                        <figure>
+                            <img src="watch.jpg" alt="watch" />
+                        </figure>
+                        <h1 class="heading1">Fossil</h1>
+                    </article>
+                    <div>
+                        <h1 class="heading2" id="watch">Men's Watch</h1>
+                        <p id="wprice">$8338</p>
+                        <button class="btn btn-success" id="buttonfour"
+                            onclick="addCart('buttonfour','watch','wprice')">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-3 text-center mb-3">
+                <div class="card-container shadow">
+                    <article>
+                        <figure>
+                            <img src="shoe.jpg" alt="shoe" />
+                        </figure>
+                        <h1 class="heading1">Puma</h1>
+                    </article>
+                    <div>
+                        <h1 class="heading2" id="shoe">Sneaker Shoes</h1>
+                        <p id="sprice">$589</p>
+                        <button class="btn btn-success" id="buttonfive"
+                            onclick="addCart('buttonfive','shoe','sprice')">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-3 text-center mb-3">
+                <div class="card-container shadow">
+                    <article>
+                        <figure>
+                            <img src="trouser.jpg" alt="trousers" />
+                        </figure>
+                        <h1 class="heading1">CLASSIO FASHION</h1>
+                    </article>
+                    <div>
+                        <h1 class="heading2" id="trouser">Formal Trousers/Pant</h1>
+                        <p id="tprice">$589</p>
+                        <button class="btn btn-success" id="buttonsix"
+                            onclick="addCart('buttonsix','trouser','tprice')">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-3 text-center mb-3">
+                <div class="card-container shadow">
+                    <article>
+                        <figure>
+                            <img src="blazer.jpg" alt="blazer" />
+                        </figure>
+                        <h1 class="heading1">BREGEO</h1>
+                    </article>
+                    <div>
+                        <h1 class="heading2" id="blazer">Blazer</h1>
+                        <p id="blprice">$589</p>
+                        <button class="btn btn-success" id="buttonseven"
+                            onclick="addCart('buttonseven','blazer','blprice')">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let productsArray = []
+        function addCart(buttonEl, pname, pprice) {
+            let buttonVal = document.getElementById(buttonEl)
+            let nameEl = document.getElementById(pname)
+            let priceEl = document.getElementById(pprice)
+            if (buttonVal.textContent === "Add to Cart") {
+                buttonVal.textContent = "Remove From button"
+                buttonVal.style.backgroundColor = "red"
+                let productOb = {
+                    name: nameEl.textContent,
+                    price: priceEl.textContent,
+
+                }
+                let presentArray = localStorage.getItem("productAddToCart")
+                if (presentArray !== null) {
+                    productsArray = localStorage.getItem("productAddToCart")
+                    productsArray = JSON.parse(productsArray)
+
+                    productsArray.push(productOb)
+                    let productsJasonArray = JSON.stringify(productsArray)
+                    localStorage.setItem("productAddToCart", productsJasonArray)
+
+
+                }
+                else {
+                    productsArray.push(productOb)
+
+                    let productsJasonArray = JSON.stringify(productsArray)
+                    localStorage.setItem("productAddToCart", productsJasonArray)
+                }
+
+            }
+            else {
+                let nameRem = document.getElementById(pname)
+                buttonVal.textContent = "Add to Cart"
+                buttonVal.style.backgroundColor = "green"
+                let gettingArray = localStorage.getItem("productAddToCart")
+                let convertedArray = JSON.parse(gettingArray)
+                let removeArray = []
+
+                for (let i in convertedArray) {
+                    if (convertedArray[i]["name"] !== nameRem.textContent) {
+                        removeArray.push(convertedArray[i])
+                    }
+
+
+                }
+                let removeJsonArray = JSON.stringify(removeArray)
+                localStorage.setItem("productAddToCart", removeJsonArray)
+
+
+            }
+        }
+    </script>
+</body>
+
+</html>
