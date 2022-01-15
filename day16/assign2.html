@@ -79,6 +79,8 @@
     </div>
 
     <script>
+        let arrayVal=[]
+        let randomNo=Math.floor(Math.random()*8)
         let cartEl = document.getElementById("cart")
         let sum = 0
         let priceEl = document.getElementById("price")
@@ -91,6 +93,8 @@
 
             cardContainer.style.backgroundColor = "#ffffff"
             cardContainer.style.borderRadius = "15px"
+            cardContainer.id="card"+randomNo
+            
 
 
 
@@ -105,10 +109,13 @@
 
             let para = document.createElement("p")
             para.textContent = productsArrayInLocal[i]["name"]
+            para.id="name"
             let parat = document.createElement("p")
             parat.textContent = productsArrayInLocal[i]["price"]
             let parath = document.createElement("img")
             parath.classList.add("w-100")
+
+            
 
             parath.style.height = "250px"
             let imageSrc = productsArrayInLocal[i]["image"]
@@ -122,20 +129,48 @@
 
             card2.appendChild(para)
             card2.appendChild(parat)
+            let removeButton=document.createElement("button")
+            removeButton.textContent="Remove From Cart"
+            removeButton.classList.add("btn" ,"btn-danger")
+            removeButton.id="remove"
+            removeButton.onclick=function(){removeItem(para.textContent)}
+            card2.appendChild(removeButton)
             card1.appendChild(parath)
             cardContainer.appendChild(card1)
             cardContainer.appendChild(card2)
             cardContainer.appendChild(card3)
             cartEl.appendChild(cardContainer)
-
+            
 
             sum = sum + parseInt(parat.textContent)
+            
 
         }
         let totalEl = document.getElementById("total")
         totalEl.textContent = sum
         priceEl.textContent = `$ ${sum}`
-
+       
+        function removeItem(name){
+            
+            let new_arr=[]
+            let arrayLocal=JSON.parse(localStorage.getItem("productAddToCart"))
+            
+           
+            for (let i in arrayLocal){
+                console.log(arrayLocal[i]["name"])
+                if(arrayLocal[i]["name"]===name){
+                    continue;
+                }
+                else{
+                    new_arr.push(arrayLocal[i])
+                }
+            }
+            let JsonArray=JSON.stringify(new_arr)
+            localStorage.setItem("productAddToCart",JsonArray)
+            location.reload();
+            
+            
+        }
 
     </script>
 </body>

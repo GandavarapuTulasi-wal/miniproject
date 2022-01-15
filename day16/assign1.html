@@ -245,11 +245,17 @@
         let productsArray = []
         let noOfProuctEl=document.getElementById("noOfProuct")
         let productsArrayInLocal = JSON.parse(localStorage.getItem("productAddToCart"))
+       
+        for(let i in productsArrayInLocal){
+            document.getElementById(productsArrayInLocal[i]["buttonId"]).textContent="Remove From Cart"
+            document.getElementById(productsArrayInLocal[i]["buttonId"]).style.backgroundColor="red"
+        }
         noOfProuctEl.textContent=productsArrayInLocal.length
         function addCart(buttonEl, pname, pprice,image) {
             
            
             let buttonVal = document.getElementById(buttonEl)
+            
             let nameEl = document.getElementById(pname)
             let priceEl = document.getElementById(pprice)
             let imageEl=document.getElementById(image)
@@ -261,10 +267,11 @@
                 let productOb = {
                     name: nameEl.textContent,
                     price: priceEl.textContent,
-                    image:imageEl.src
+                    image:imageEl.src,
+                    buttonId:buttonVal.id,
 
                 }
-                let presentArray = localStorage.getItem("productAddToCart")
+                let presentArray = JSON.parse(localStorage.getItem("productAddToCart"))
                 if (presentArray !== null) {
                     productsArray = localStorage.getItem("productAddToCart")
                     productsArray = JSON.parse(productsArray)
